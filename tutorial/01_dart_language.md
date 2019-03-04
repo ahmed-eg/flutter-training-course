@@ -219,7 +219,7 @@ class MyClass {
     
     MyClass(this.name, this.age);
     
-    operator == (MyClass myClass) => myClass.name == name; // if same name
+    operator == (dynamic myClass) => myClass.name == name; // if same name
 }
 ```
 
