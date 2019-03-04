@@ -6,3 +6,6 @@ Training course material and sample app for Flutter
 All materials are foucsing on the differances between C# and Dart (Flutter)
 
 Also will impelement MVC pattern
+
+
+https://flutter.dev/docs/development/ui/widgets
