@@ -9,7 +9,6 @@ class _DepartmentListPageState extends State<DepartmentListPage> {
   @override
   Widget build(BuildContext context) {
     
-    
     return Container(
       
     );
