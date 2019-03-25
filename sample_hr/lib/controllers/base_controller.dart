@@ -20,7 +20,7 @@ abstract class BaseController{
     return _context ?? state.context;
   }
 
-  BaseController(this.state, {buildContext}) :assert(state != null || buildContext != null){
+  BaseController(this.state, {buildContext}) : assert(state != null || buildContext != null){
     _context = buildContext;
   }
 
