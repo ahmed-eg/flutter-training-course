@@ -4,16 +4,16 @@ import 'package:path_provider/path_provider.dart';
 
 class FileService{
 
-  saveJson(module,Map data) async{
-    Directory appDocDir = await getApplicationDocumentsDirectory();
-    //String appDocPath = appDocDir.path;
+  Directory appDocDir;
+
+  saveJson(String module,Map data) async{
+    if(appDocDir == null) appDocDir = await getApplicationDocumentsDirectory();
     var file =File('${appDocDir.path}/$module.json');
     await file.writeAsString(json.encode(data),flush: true);
   }
 
-  getJson(module,) async{
-    Directory appDocDir = await getApplicationDocumentsDirectory();
-    //String appDocPath = appDocDir.path;
+  getJson(String module) async{
+    if(appDocDir == null) appDocDir = await getApplicationDocumentsDirectory();
     var file =File('${appDocDir.path}/$module.json');
     var data = await file.readAsString();
 
