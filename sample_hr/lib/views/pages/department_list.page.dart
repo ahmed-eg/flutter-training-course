@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_hr/controllers/department_list.controller.dart';
 
 class DepartmentListPage extends StatefulWidget {
   @override
@@ -6,11 +7,22 @@ class DepartmentListPage extends StatefulWidget {
 }
 
 class _DepartmentListPageState extends State<DepartmentListPage> {
+
+  DepartmentListController _controller;
+
+  @override
+  void initState() {
+    _controller =DepartmentListController(this);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     
-    return Container(
+    return Scaffold(
+      appBar: AppBar(title: Text('Department List'),),
       
     );
+
   }
 }
