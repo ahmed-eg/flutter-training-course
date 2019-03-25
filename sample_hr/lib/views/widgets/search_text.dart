@@ -14,7 +14,8 @@ class SearchText extends StatelessWidget {
               decoration: InputDecoration(
                 hintText: 'Search ..',
                 contentPadding: EdgeInsets.all(15.0),
-                //icon: Icon(Icons.search)
+                prefixIcon:  Icon(Icons.search),
+                
               ),
               onChanged: onChange,
             );

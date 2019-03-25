@@ -39,4 +39,10 @@ class DepartmentListController extends BaseController {
   void onAdd() {
     navigateTo(() => DepartmentFormPage());
   }
+
+  Future<void> onRefresh() async{
+    await Future.delayed(Duration(seconds: 2));
+    setState();
+  }
+  
 }
