@@ -199,7 +199,8 @@ class AppNavigation{
                   color: Colors.blue,
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
                   onPressed: ()=>Navigator.of(_).pop(true),
-                  child: Text('Yes', style: TextStyle(color: Colors.blue)),
+                  child: Text('Yes', style: TextStyle(color: Colors.white)
+                  ),
                 )),
                 SizedBox(width: 15.0),
                  ButtonTheme(
