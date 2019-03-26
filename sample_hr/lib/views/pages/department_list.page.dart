@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sample_hr/controllers/department_list.controller.dart';
 import 'package:sample_hr/models/department.dart';
+import 'package:sample_hr/views/widgets/app_bar.dart';
 import 'package:sample_hr/views/widgets/search_text.dart';
 
 class DepartmentListPage extends StatefulWidget {
@@ -20,9 +21,7 @@ class _DepartmentListPageState extends State<DepartmentListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Department List'),
-        ),
+        appBar: MainAppBar(title:'Department List'),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: _controller.onAdd,
