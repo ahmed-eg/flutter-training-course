@@ -24,7 +24,7 @@ abstract class BaseController{
     _context = buildContext;
   }
 
-  navigateTo(creator, [bool replacment = false,AnimationTypes animationType = AnimationTypes.slideLeft]){
+  Future<dynamic> navigateTo(creator, [bool replacment = false,AnimationTypes animationType = AnimationTypes.slideLeft]){
     
     return AppNavigation.navigateTo(context, creator,replacment:replacment, animationType:animationType);
 

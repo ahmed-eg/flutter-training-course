@@ -32,13 +32,22 @@ class DepartmentListController extends BaseController {
   }
 
   onTap(Department d) async {
-    if (await confirmMessage('You sure?'))
-      navigateTo(() => DepartmentFormPage(d));
+    if (await confirmMessage('You sure?')){
+      Department result = await navigateTo(() => DepartmentFormPage(d));
+      if(result == null)return;
+      var index = departments.indexOf(d);
+      departments.removeAt(index);
+      departments.insert(index,result);
+      setState();
+    }
   }
 
-  void onAdd() {
-    navigateTo(() => DepartmentFormPage());
-  }
+  void onAdd() async{
+    Department result = await navigateTo(() => DepartmentFormPage());
+    if(result == null)return;
+    departments.add(result);
+    setState();
+ }
 
   Future<void> onRefresh() async{
     await Future.delayed(Duration(seconds: 2));

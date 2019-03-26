@@ -34,7 +34,12 @@ class DepartmentFormController extends BaseController{
 
     if(form.currentState.validate()){
       print('saving..');
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 1));
+      department.code = code.text;
+      department.nameAr =nameAr.text;
+      department.nameEn =nameEn.text;
+      department.description =description.text;
+      Navigator.pop(context, department);
     }
   }
 
