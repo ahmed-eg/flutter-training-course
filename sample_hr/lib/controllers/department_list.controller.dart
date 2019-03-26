@@ -44,5 +44,5 @@ class DepartmentListController extends BaseController {
     await Future.delayed(Duration(seconds: 2));
     setState();
   }
-  
+
 }
