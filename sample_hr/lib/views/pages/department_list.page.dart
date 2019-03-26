@@ -21,6 +21,7 @@ class _DepartmentListPageState extends State<DepartmentListPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _controller.key,
         appBar: MainAppBar(title:'Department List'),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),

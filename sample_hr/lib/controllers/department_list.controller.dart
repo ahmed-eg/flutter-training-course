@@ -8,6 +8,8 @@ class DepartmentListController extends BaseController {
   List<Department> _departments;
   TextEditingController searchController;
 
+  var key =GlobalKey<ScaffoldState>();
+
   List<Department> get departments {
     if (searchController.text.isEmpty) return _departments;
     return _departments
@@ -39,6 +41,7 @@ class DepartmentListController extends BaseController {
       departments.removeAt(index);
       departments.insert(index,result);
       setState();
+      key.currentState.showSnackBar(SnackBar(duration:Duration(seconds: 2) , content:Text('Saved Successfully') ), );
     }
   }
 
@@ -47,6 +50,8 @@ class DepartmentListController extends BaseController {
     if(result == null)return;
     departments.add(result);
     setState();
+    key.currentState.showSnackBar(SnackBar(duration:Duration(seconds: 2) ,content:Text('Saved Successfully') ), );
+
  }
 
   Future<void> onRefresh() async{
