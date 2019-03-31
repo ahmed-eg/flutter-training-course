@@ -9,3 +9,12 @@ Also will impelement MVC pattern
 
 
 https://flutter.dev/docs/development/ui/widgets
+
+# Database
+
+Database inside a json file "db.json"
+
+you can call it via the following link:
+```
+http://my-json-server.typicode.com/ahmed-eg/flutter-training-course/departments
+```
