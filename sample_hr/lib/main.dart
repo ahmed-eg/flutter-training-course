@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample_hr/views/pages/department_list.page.dart';
+import 'package:sample_hr/views/pages/employee_list.page.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: DepartmentListPage(),
+      home: EmployeeListPage(),
     );
   }
 }

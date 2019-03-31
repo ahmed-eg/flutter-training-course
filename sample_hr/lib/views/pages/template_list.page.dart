@@ -8,7 +8,7 @@ class TemplateListPage extends StatefulWidget {
 
   final String title;
   final TemplateListController controller;
-  final Widget Function(dynamic) generateRow;
+  final Widget Function(BaseModel) generateRow;
   TemplateListPage({this.title,this.controller,this.generateRow});
 
   @override
