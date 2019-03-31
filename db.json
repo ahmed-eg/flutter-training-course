@@ -1,11 +1,18 @@
 {
-  "posts": [
+  "departments": [
     {
       "id": 1,
-      "title": "hello"
+      "code: "1001",
+      "nameEn": "HR",
+      "nameAr": "شؤون الموظفين"
+      "description" :"HR Department"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "employees": [
+    {
+      "id":1,
+      "name":"",
+      "departmentId":1
+    }
+  ]
 }
