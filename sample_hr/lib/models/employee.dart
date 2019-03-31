@@ -8,7 +8,7 @@ class Employee extends BaseModel{
 
   Employee({id, isActive = false,this.code,this.nameAr,this.nameEn, 
     this.jobTitle, this.basicSalary, this.allownces,this.groupIds, 
-    this.departmentId});
+    this.departmentId}):super(id:id,isActive:isActive);
 
   String code;
   String nameAr;
