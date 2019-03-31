@@ -2,16 +2,17 @@
   "departments": [
     {
       "id": 1,
-      "code: "1001",
+      "code": "1001",
       "nameEn": "HR",
-      "nameAr": "شؤون الموظفين"
+      "nameAr": "شؤون الموظفين",
       "description" :"HR Department"
     }
   ],
   "employees": [
     {
       "id":1,
-      "name":"",
+      "name":"Ahmed",
+      "lastName":"El-Araby",
       "departmentId":1
     }
   ]
