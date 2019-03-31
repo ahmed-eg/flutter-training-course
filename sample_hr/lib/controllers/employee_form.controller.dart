@@ -11,13 +11,17 @@ class EmployeeFormController extends BaseController{
   TextEditingController code;
   TextEditingController nameEn;
   TextEditingController nameAr;
-  TextEditingController description;
+  TextEditingController jobTitle;
+  TextEditingController salary;
+  TextEditingController allownces;
   Employee employee;
 
   var codeValidation = (String val)=> val.isEmpty ? 'Must Insert Code' : null;
   var nameEnValidation = (String val)=> val.isEmpty ? 'Must Insert Arabic Name' : null;
   var nameArValidation = (String val)=> val.isEmpty ? 'Must Insert English Name' : null;
-  var descriptionValidation = (String val)=> null;
+  var jobTitleValidation = (String val)=> null;
+  var salaryValidation = (String val)=> double.tryParse(val) == null ? 'must insert valid integer' : null;
+  var allowncesValidation = (String val)=> double.tryParse(val) == null ? 'must insert valid integer' : null;
 
   EmployeeFormController(State<StatefulWidget> state, 
                           this.employee) : super(state){
@@ -27,7 +31,9 @@ class EmployeeFormController extends BaseController{
     code = TextEditingController(text: employee?.code ?? '');
     nameEn = TextEditingController(text: employee?.nameEn ?? '');
     nameAr = TextEditingController(text: employee?.nameAr ?? '');
-    //description = TextEditingController(text: employee?.description ?? '');
+    jobTitle = TextEditingController(text: employee?.jobTitle ?? '');
+    salary = TextEditingController(text: employee?.basicSalary?.toString() ?? '');
+    allownces = TextEditingController(text: employee?.allownces?.toString() ?? '');
     
   }
 
@@ -39,7 +45,9 @@ class EmployeeFormController extends BaseController{
       employee.code = code.text;
       employee.nameAr =nameAr.text;
       employee.nameEn =nameEn.text;
-      //employee.description =description.text;
+      employee.jobTitle =jobTitle.text;
+      employee.basicSalary = double.tryParse(salary.text) ?? 0.0;
+      employee.allownces =  double.tryParse(allownces.text) ?? 0.0;
       Navigator.pop(context, employee);
     }
   }

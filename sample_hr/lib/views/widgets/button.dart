@@ -18,7 +18,7 @@ class _MainButtonState extends State<MainButton> {
   @override
   Widget build(BuildContext context) {
     return ButtonTheme(
-                  minWidth: 100.0,
+                  minWidth: 200.0,
                   height: 50.0,
                   child:RaisedButton(
                   color: _isBusy ? Colors.white :  Colors.blue,

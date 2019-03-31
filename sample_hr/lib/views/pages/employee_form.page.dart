@@ -27,14 +27,49 @@ class _EmployeeFormPageState extends State<EmployeeFormPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return
+    DefaultTabController(
+      length: 3,
+      initialIndex: 0,
+      child: Scaffold(
       appBar: MainAppBar(
           title: widget.employee == null
-              ? 'New Department'
-              : 'Update Department'),
+              ? 'New Employee'
+              : 'Update Employee',
+              bottom: TabBar(
+                labelPadding: EdgeInsets.all(5.0),
+                tabs: <Widget>[
+                  Text('Personal'),
+                  Text('Financal'),
+                  Text('Groups'),
+                ],
+              ),),
       body: Form(
         key:_controller.form,
-        child: ListView(
+        child: TabBarView(
+          children: <Widget>[
+            getPersonal(),
+            getFinancial(),
+            getGroups()
+          ],
+        ),
+      ),
+      bottomSheet:
+      
+      Container(
+        height: 90.0,
+        padding: EdgeInsets.only(bottom: 20.0),
+        child:Align(
+          alignment: Alignment.bottomCenter,
+          child:
+       MainButton(label:'Save', callBack: _controller.onSave)),
+      )
+,
+    ));
+  }
+
+  getPersonal(){
+    return ListView(
           padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
           children: <Widget>[
             MainTextFormField(
@@ -54,19 +89,41 @@ class _EmployeeFormPageState extends State<EmployeeFormPage> {
               controller: _controller.nameEn,
             ),
             MainTextFormField(
-                label: 'Description', 
-                validator: _controller.descriptionValidation,
-                multiLines: true,
-                controller: _controller.description),
+                label: 'Job Title', 
+                validator: _controller.jobTitleValidation,
+                //multiLines: true,
+                controller: _controller.jobTitle),
             MainCheckBox(
               label: 'Is Active',
               initValue: _controller.employee.isActive,
               onChange: (value)=>_controller.employee.isActive =value,
             ),
-            MainButton(label:'Save', callBack: _controller.onSave)
           ],
-        ),
-      ),
-    );
+        );
+  }
+
+
+  getFinancial(){
+    return ListView(
+          padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 10.0),
+          children: <Widget>[
+            MainTextFormField(
+              label: 'Salary',
+              controller: _controller.salary,
+              validator: _controller.salaryValidation,
+              keyboardType: TextInputType.number,
+            ),
+            MainTextFormField(
+              label: 'Allownces',
+              validator: _controller.allowncesValidation,
+              controller: _controller.allownces,
+              keyboardType: TextInputType.number,
+            ),
+          ]
+        );
+  }
+
+  getGroups(){
+    return Text('TODO: Groups');
   }
 }
