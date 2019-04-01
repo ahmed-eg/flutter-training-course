@@ -13,5 +13,11 @@ class Department extends BaseModel{
 
   Department({id,isActive=false, this.code, this.nameAr, this.nameEn,this.description}) 
           :super(id:id,isActive:isActive);
-          
+
+  Department.fromMap(Map map){
+    id = map['id'];
+    nameAr = map['nameAr'];
+    nameEn = map['nameEn'];
+  }
+  
 }

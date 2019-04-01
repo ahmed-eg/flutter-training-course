@@ -6,6 +6,20 @@
       "nameEn": "HR",
       "nameAr": "شؤون الموظفين",
       "description" :"HR Department"
+    },
+{
+      "id": 2,
+      "code": "1002",
+      "nameEn": "IT",
+      "nameAr": "شؤون",
+      "description" :"IT Department"
+    },
+{
+      "id": 3,
+      "code": "1003",
+      "nameEn": "ACC",
+      "nameAr": "شؤين",
+      "description" :"Accountant Department"
     }
   ],
   "employees": [

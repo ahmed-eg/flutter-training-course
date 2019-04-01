@@ -31,7 +31,10 @@ class _TemplateListPageState extends State<TemplateListPage> {
           children: <Widget>[
             SearchText(widget.controller.searchController, widget.controller.onSearch),
             Expanded(
-              child: RefreshIndicator(
+              child:
+              widget.controller.items == null ? 
+                Center(child: CircularProgressIndicator(),):
+               RefreshIndicator(
                 onRefresh: widget.controller.onRefresh,
                 child: ListView(
                   children:
