@@ -20,7 +20,21 @@ class _HomePageState extends State<HomePage> {
       appBar: MainAppBar(title: 'Home Page'),
       key: _controller.key,
       drawer: getDrawer(),
-
+      body: ListView(
+        children: <Widget>[
+          Card(
+            margin: EdgeInsets.all(25.0),
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: 15.0,),
+                Text('Total Number of Employees:'),
+                Text('100'),
+                SizedBox(height: 15.0,),
+              ],
+            )
+          )
+        ],
+      ),
     );
   }
 
@@ -30,6 +44,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName: Text('User Name'),
+              accountEmail: Text('ahmed-eg@live.com'),
               currentAccountPicture: CircleAvatar(
                 child: Icon(Icons.person),
               ),
