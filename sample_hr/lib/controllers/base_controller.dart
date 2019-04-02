@@ -8,7 +8,8 @@ import 'package:sample_hr/services/navigation.service.dart';
 abstract class BaseController{
 
   bool busy = false;
-
+  String errorMessage;
+  
   void dispose(){
 
   }

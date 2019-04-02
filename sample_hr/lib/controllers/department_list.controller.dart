@@ -20,8 +20,15 @@ class DepartmentListController extends TemplateListController {
   formPageCreator([model])=>DepartmentFormPage(model);
   
   Future<void> onRefresh() async{
-    var ls = await _service.getDepartments();
-    setItems(ls);
+    errorMessage = null;
+    
+    var result = await _service.getDepartments();
+
+    if(!result.success)
+      errorMessage = result.message;
+    else
+      setItems(result.data);
+
     setState();
   }
 

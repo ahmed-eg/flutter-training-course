@@ -29,7 +29,7 @@ class _DepartmentListPageState extends State<DepartmentListPage> {
     return ListTile(
           title: Text(d.nameEn,
               style: TextStyle(color: d.isActive ? Colors.black : Colors.red)),
-          subtitle: Text('Department description'),
+          subtitle: Text(d.description),
           trailing: Text(d.code,
               style: TextStyle(color: d.isActive ? Colors.black : Colors.red)),
           onTap: () => _controller.onTap(d),

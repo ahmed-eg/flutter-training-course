@@ -16,8 +16,20 @@ class Department extends BaseModel{
 
   Department.fromMap(Map map){
     id = map['id'];
+    code = map['code'] ?? '';
     nameAr = map['nameAr'];
     nameEn = map['nameEn'];
+    description = map['description'];
+    isActive = true;
+  }
+
+  toMap(){
+    return {
+      'id' : id,
+      'nameAr' :nameAr,
+      'nameEn' :nameEn,
+      'description' :description,
+    };
   }
   
 }
