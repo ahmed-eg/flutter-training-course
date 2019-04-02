@@ -19,7 +19,13 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: MainAppBar(title: 'Home Page'),
       key: _controller.key,
-      drawer: Drawer(
+      drawer: getDrawer(),
+
+    );
+  }
+
+  getDrawer(){
+    return Drawer(
         child: Column(
           children: <Widget>[
             UserAccountsDrawerHeader(
@@ -40,7 +46,6 @@ class _HomePageState extends State<HomePage> {
             )
           ],
         ),
-      ),
-    );
+      );
   }
 }
