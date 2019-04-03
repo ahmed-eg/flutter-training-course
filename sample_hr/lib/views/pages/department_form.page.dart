@@ -26,7 +26,7 @@ class _DepartmentFormPageState extends State<DepartmentFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(
+      appBar: MainAppBar(context,
           title: widget.department == null
               ? 'New Department'
               : 'Update Department'),

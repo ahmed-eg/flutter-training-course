@@ -32,7 +32,7 @@ class _EmployeeFormPageState extends State<EmployeeFormPage> {
       length: 3,
       initialIndex: 0,
       child: Scaffold(
-      appBar: MainAppBar(
+      appBar: MainAppBar(context,
           title: widget.employee == null
               ? 'New Employee'
               : 'Update Employee',

@@ -207,7 +207,6 @@ class AppNavigation{
                   minWidth: 100.0,
                   height: 60.0,
                   child:RaisedButton(
-                  
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
                   color: Colors.white,
                   onPressed:()=>Navigator.of(_).pop(false),

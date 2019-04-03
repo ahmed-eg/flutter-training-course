@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:sample_hr/controllers/base_controller.dart';
 import 'package:sample_hr/models/department.dart';
+import 'package:sample_hr/services/department.service.dart';
 
 class DepartmentFormController extends BaseController{
 
@@ -12,7 +13,7 @@ class DepartmentFormController extends BaseController{
   TextEditingController nameAr;
   TextEditingController description;
   Department department;
-
+  DepartmentService _service;
   var codeValidation = (String val)=> val.isEmpty ? 'Must Insert Code' : null;
   var nameEnValidation = (String val)=> val.isEmpty ? 'Must Insert Arabic Name' : null;
   var nameArValidation = (String val)=> val.isEmpty ? 'Must Insert English Name' : null;
@@ -21,7 +22,8 @@ class DepartmentFormController extends BaseController{
   DepartmentFormController(State<StatefulWidget> state, 
                           this.department) : super(state){
     
-    if (department == null) department = Department(isActive: true);
+    _service = DepartmentService();
+    if (department == null) department = Department(id:0,isActive: true);
 
     code = TextEditingController(text: department?.code ?? '');
     nameEn = TextEditingController(text: department?.nameEn ?? '');
@@ -39,6 +41,10 @@ class DepartmentFormController extends BaseController{
       department.nameAr =nameAr.text;
       department.nameEn =nameEn.text;
       department.description =description.text;
+
+      if(department.id ==0) 
+        _service.addDepartment(department);
+
       Navigator.pop(context, department);
     }
   }

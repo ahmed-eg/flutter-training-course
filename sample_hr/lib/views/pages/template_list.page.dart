@@ -19,7 +19,7 @@ class _TemplateListPageState extends State<TemplateListPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: widget.controller.key,
-        appBar: MainAppBar(title: widget.title),
+        appBar: MainAppBar(context, title: widget.title),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           onPressed: widget.controller.onAdd,
@@ -49,9 +49,11 @@ class _TemplateListPageState extends State<TemplateListPage> {
   }
 
   Widget getRow(BaseModel d) {
-    return Column(
-      children: <Widget>[widget.generateRow(d), Divider()],
-    );
+    return Theme(
+        data: d.isActive ? ThemeData() : ThemeData(),
+        child: Column(
+          children: <Widget>[widget.generateRow(d), Divider()],
+        ));
   }
 
   getOnErrorWudget() {

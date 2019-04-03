@@ -27,8 +27,7 @@ class _DepartmentListPageState extends State<DepartmentListPage> {
 
   Widget getRow(dynamic d){
     return ListTile(
-          title: Text(d.nameEn,
-              style: TextStyle(color: d.isActive ? Colors.black : Colors.red)),
+          title: Text(d.nameEn),
           subtitle: Text(d.description),
           trailing: Text(d.code,
               style: TextStyle(color: d.isActive ? Colors.black : Colors.red)),
