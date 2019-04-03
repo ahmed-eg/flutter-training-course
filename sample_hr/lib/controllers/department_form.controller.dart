@@ -16,7 +16,7 @@ class DepartmentFormController extends BaseController{
   DepartmentService _service;
   var codeValidation = (String val)=> val.isEmpty ? 'Must Insert Code' : null;
   var nameEnValidation = (String val)=> val.isEmpty ? 'Must Insert Arabic Name' : null;
-  String nameArValidation(String val)=> val ==nameEn.text ? 'Must Insert English Name' : null;
+  String nameArValidation(String val)=> val.isEmpty ? 'Must Insert English Name' : null;
   var descriptionValidation = (String val)=> null;
 
   DepartmentFormController(State<StatefulWidget> state, 

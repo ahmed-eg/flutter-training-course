@@ -62,7 +62,7 @@ class _DepartmentFormPageState extends State<DepartmentFormPage> {
               initValue: _controller.department.isActive,
               onChange: (value)=>_controller.department.isActive =value,
             ),
-            MainRadioButton(items:['item1','item2', 'item3'],label:'Choose one'),
+            MainRadioButton(items:['item000000001','item2', 'item3','item4','item5', 'item6'],label:'Choose one'),
             MainButton(label:'Save', callBack: _controller.onSave)
           ],
         ),
