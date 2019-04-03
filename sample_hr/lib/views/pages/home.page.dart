@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sample_hr/controllers/home.controller.dart';
+import 'package:sample_hr/services/app_localizations.dart';
 import 'package:sample_hr/services/department.service.dart';
 import 'package:sample_hr/services/theme.service.dart';
 import 'package:sample_hr/views/widgets/app_bar.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(context,title: 'Home Page'),
+      appBar: MainAppBar(context,title: AppLocale.translate(context, 'Home Page')),
       key: _controller.key,
       drawer: 
       Theme(
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(
                     height: 15.0,
                   ),
-                  Text('Total Number of Departments:',
+                  Text(AppLocale.translate(context,'Total Number of Departments:'),
                   style: Theme.of(context).textTheme.title,),
                   SizedBox(height: 15.0),
                   StreamBuilder(
@@ -53,9 +54,9 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height: 15.0),
                 ],
               )),
-              Text('any data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data here',
+              //Text('any data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data here',
               //style: Theme.of(context).textTheme.title,
-              textAlign: TextAlign.center)
+              //textAlign: TextAlign.center)
         ],
       ),
     );
