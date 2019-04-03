@@ -4,6 +4,7 @@ import 'package:sample_hr/models/department.dart';
 import 'package:sample_hr/views/widgets/app_bar.dart';
 import 'package:sample_hr/views/widgets/button.dart';
 import 'package:sample_hr/views/widgets/check_box.dart';
+import 'package:sample_hr/views/widgets/radio_button.dart';
 import 'package:sample_hr/views/widgets/text_form_field.dart';
 
 class DepartmentFormPage extends StatefulWidget {
@@ -61,6 +62,7 @@ class _DepartmentFormPageState extends State<DepartmentFormPage> {
               initValue: _controller.department.isActive,
               onChange: (value)=>_controller.department.isActive =value,
             ),
+            MainRadioButton(items:['item1','item2', 'item3'],label:'Choose one'),
             MainButton(label:'Save', callBack: _controller.onSave)
           ],
         ),

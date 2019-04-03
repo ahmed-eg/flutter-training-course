@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sample_hr/services/app_localizations.dart';
 
 class MainButton extends StatefulWidget {
   
@@ -37,7 +38,7 @@ class _MainButtonState extends State<MainButton> {
                     });
                   },
                   child: _isBusy ? CircularProgressIndicator() 
-                      : Text(widget.label, style: TextStyle(color: Colors.white)
+                      : Text( AppLocale.translate(context,widget.label), style: TextStyle(color: Colors.white)
                   ),
                 ));
   }

@@ -64,6 +64,6 @@ class AppLocale {
   String trans(String key) {
     if (key == null) return '';
     if (this._sentences == null) return key; // return the same key if the _sentences is null
-    return this._sentences.containsKey(key) ? this._sentences[key] : key;    
+    return this._sentences.containsKey(key) ? this._sentences[key].toString() : key;    
   }
 }

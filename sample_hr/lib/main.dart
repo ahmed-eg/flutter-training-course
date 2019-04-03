@@ -4,7 +4,7 @@ import 'package:sample_hr/services/theme.service.dart';
 import 'package:sample_hr/views/pages/department_list.page.dart';
 import 'package:sample_hr/views/pages/employee_list.page.dart';
 import 'package:sample_hr/views/pages/home.page.dart';
-import 'package:flutter\_localizations/flutter\_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,10 +22,11 @@ class MyApp extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate
       ],
+      //locale: Locale('ar', 'SA'),
       localeResolutionCallback:
           (Locale locale, Iterable<Locale> supportedLocales) {
             // TODO: check the current locale and return one of them
-            //return supportedLocales.last;
+            return supportedLocales.last;
             return locale;
           },
     );
