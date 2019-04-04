@@ -10,7 +10,7 @@ class DepartmentService {
                            = StreamController<int>.broadcast();
 
   static Stream<int> get countStream => 
-                  _departmentCountStreamController.stream;
+                  _departmentCountStreamController.stream.asBroadcastStream();
 
   static int departmentCount ;
 

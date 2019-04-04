@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
   HomeController _controller;
   @override
   void initState() {
@@ -21,7 +21,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: MainAppBar(context,title: AppLocale.translate(context, 'Home Page')),
+      appBar: MainAppBar(context,title: AppLocale.translate(context, 'Home Page')
+      ,actions: <Widget>[
+        IconButton(icon:Icon(Icons.refresh), onPressed: _controller.onRefresh)
+      ],),
       key: _controller.key,
       drawer: 
       Theme(
@@ -31,17 +34,8 @@ class _HomePageState extends State<HomePage> {
 
       body: ListView(
         children: <Widget>[
-          Card(
-              margin: EdgeInsets.all(25.0),
-              child: Column(
-                children: <Widget>[
-                  SizedBox(
-                    height: 15.0,
-                  ),
-                  Text(AppLocale.translate(context,'Total Number of Departments:'),
-                  style: Theme.of(context).textTheme.title,),
-                  SizedBox(height: 15.0),
-                  StreamBuilder(
+          SizedBox(height: _controller.size1),
+          dashboardCard('Total Number of Departments:',StreamBuilder(
                     stream: DepartmentService.countStream,
                     builder: (_,snap){
                       if(!snap.hasData) return Text('loading...');
@@ -49,11 +43,13 @@ class _HomePageState extends State<HomePage> {
                         style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 30.0),
                         textAlign: TextAlign.center,);
                     },
-                  ),
-                  // Text(_controller.departmentCount?.toString() ?? 'loading..'),
-                  SizedBox(height: 15.0),
-                ],
-              )),
+                  )),
+          SizedBox(height: _controller.size2),
+          dashboardCard('Total Number of Employees:',Text('100')),
+          SizedBox(height: _controller.size3),
+          dashboardCard('Total Number of Groups:',Text('300')),
+          SizedBox(height: _controller.size4),
+          dashboardCard('Total Number of XXX:',Text('0')),
               //Text('any data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data hereany data here',
               //style: Theme.of(context).textTheme.title,
               //textAlign: TextAlign.center)
@@ -62,6 +58,23 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  dashboardCard(String title,Widget body){
+    return Card(
+              margin: EdgeInsets.all(25.0),
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    height: 15.0,
+                  ),
+                  Text(AppLocale.translate(context,title),
+                  style: Theme.of(context).textTheme.title,),
+                  SizedBox(height: 15.0),
+                  body,
+                  // Text(_controller.departmentCount?.toString() ?? 'loading..'),
+                  SizedBox(height: 15.0),
+                ],
+              ));
+  }
   getDrawer() {
     return Drawer(
       child: Column(
