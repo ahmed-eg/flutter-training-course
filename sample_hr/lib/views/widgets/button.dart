@@ -22,7 +22,7 @@ class _MainButtonState extends State<MainButton> {
                   minWidth: 200.0,
                   height: 50.0,
                   child:RaisedButton(
-                  color: _isBusy ? Colors.white :  Colors.blue,
+                  color: _isBusy ? Colors.white :  Theme.of(context).primaryColor,
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
                   onPressed: ()async{
                     if(_isBusy) return;

@@ -9,6 +9,7 @@ import 'package:sample_hr/views/widgets/check_box.dart';
 import 'package:sample_hr/views/widgets/text_form_field.dart';
 
 class EmployeeFormPage extends StatefulWidget {
+  
   final Employee employee;
   EmployeeFormPage([this.employee]);
 

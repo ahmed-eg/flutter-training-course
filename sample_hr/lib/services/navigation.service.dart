@@ -131,7 +131,7 @@ class AppNavigation{
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50.0)),
                     color: Colors.white,
                     onPressed:()=>Navigator.of(_, rootNavigator: true).pop(),
-                    child: Text('OK', style: TextStyle(color:Colors.blue)),
+                    child: Text('OK', style: TextStyle(color:Theme.of(context).primaryColor)),
                 )),
                 
                 SizedBox(height: 50.0),
@@ -196,7 +196,7 @@ class AppNavigation{
                   minWidth: 100.0,
                   height: 60.0,
                   child:RaisedButton(
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
                   onPressed: ()=>Navigator.of(_).pop(true),
                   child: Text('Yes', style: TextStyle(color: Colors.white)
@@ -210,7 +210,7 @@ class AppNavigation{
                   shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(50.0)),
                   color: Colors.white,
                   onPressed:()=>Navigator.of(_).pop(false),
-                  child: Text('No', style: TextStyle(color: Colors.blue)),
+                  child: Text('No', style: TextStyle(color: Theme.of(context).primaryColor)),
                 ))
                 ],),
                 SizedBox(height: 50.0),
